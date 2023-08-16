@@ -19,7 +19,7 @@ def main():
     team_names = bat.teams
 
     # Input for PlayerName (dropdown)
-    team_name = st.selectbox("Select Team Name", ["hi"])
+    team_name = st.selectbox("Select Team Name", team_names)
     phases = st.multiselect("Select Phases ", ["Powerplay", "Middle1","Middle2","Slog"])
     # Input for Bowling type (dropdown)
     bowling_type = st.multiselect("Select Bowling Type(s)", ["Pace", "Spin"])
