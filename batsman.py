@@ -68,6 +68,7 @@ class Batsman():
 
 
         for ph in phase:
+            overs1=self.dic[ph]
             for bo in bow1:
                       
                 d1=self.create_df(name, overs1, [bo], Season)
@@ -75,16 +76,7 @@ class Batsman():
                 d1["phase"]=ph1[ph]
                 self.phasewise_df = pd.concat([self.phasewise_df ,pd.DataFrame(d1, index=[0])], ignore_index=True)
 
-            # order=['phase','BowlingType','player_name', 'total_runs', 'outs', 'balls_played', 'average_runs', 'strike_rate','BowlingType','phase','bpercent','dpercent']
-
-
-
-
-
-
-
-            # order=['phase','BowlingType','team_name', 'total_runs', 'outs', 'balls_played', 'average_runs', 'strike_rate','BowlingType','phase','bpercent','dpercent']
-            # self.phasewise_df=self.phasewise_df[order]
+            
         return self.phasewise_df
 
     def overall(self):
@@ -96,7 +88,7 @@ bat=Batsman(df)
 #result=bat.calculate('H Klaasen',[1,2,3],["Spin"],[2023]) 
 result=bat.calculate('Sunrisers Hyderabad',[1],["Pace","Spin"],[2023]) 
 #result1=bat.overall()
-#print(result1['strike_rate'])
+#print(result['strike_rate'])
 #print(result['balls_played'])
 
 

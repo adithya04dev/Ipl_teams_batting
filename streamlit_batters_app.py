@@ -6,7 +6,7 @@ sys.path.append('C:/Users/adith/Documents/ipl_app/team_app/batting')
 from batsman import Batsman
 with open('C:/Users/adith/Documents/ipl_app/team_app/batting/batting1.pkl', 'rb') as f:
     bat = pickle.load(f)
-    #result1=bat.calculate("RA Tripathi",[1,2,3],["Pace"],[2022])
+    #result1=bat.calculate("Sunrisers Hyderabad",[1,2,3],["Pace"],[2022])
     #print(result1['strike_rate'])
 
 def main():
