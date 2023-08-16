@@ -54,5 +54,6 @@ def main():
 
         st.write("Phase wise breakdown:")
         result1=result1.iloc[:,[7,6,0,1,2,3,4,5,8]]
+        st.write(result1)
 if __name__ == '__main__':
     main()
