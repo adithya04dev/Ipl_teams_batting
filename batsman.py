@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import pickle
-df=pd.read_csv("C:/Users/adith/Documents/ipl_app/team_app/batting/processed_ballbyball.csv")
+df=pd.read_csv("processed_ballbyball.csv")
 
 
 class Batsman():
@@ -92,5 +92,5 @@ result=bat.calculate('Sunrisers Hyderabad',[1],["Pace","Spin"],[2023])
 #print(result['balls_played'])
 
 
-with open('C:/Users/adith/Documents/ipl_app/team_app/batting/batting1.pkl', 'wb') as f:
+with open('batting1.pkl', 'wb') as f:
     pickle.dump(bat, f)
