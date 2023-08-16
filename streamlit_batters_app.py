@@ -3,7 +3,7 @@ import pickle
 import streamlit as st
 #import sys 
 #sys.path.append('C:/Users/adith/Documents/ipl_app/team_app/batting')
-from batsman import Batsman
+from batsman import Batsmant
 with open('batting1.pkl', 'rb') as f:
     bat = pickle.load(f)
     #result1=bat.calculate("Sunrisers Hyderabad",[1,2,3],["Pace"],[2022])
@@ -18,7 +18,7 @@ def main():
     team_names = bat.teams
 
     # Input for PlayerName (dropdown)
-    team_name = st.selectbox("Select Team Name", team_names)
+    team_name = st.selectbox("Select Team Name", ["hi"])
     phases = st.multiselect("Select Phases ", ["Powerplay", "Middle1","Middle2","Slog"])
     # Input for Bowling type (dropdown)
     bowling_type = st.multiselect("Select Bowling Type(s)", ["Pace", "Spin"])
@@ -41,6 +41,7 @@ def main():
         
         result1=bat.calculate(team_name,overs,bowling_type,Season)
         result2=bat.overall()
+        
         
         result3=bat.combined()
         st.write("Overall (All phases and bowling types ):")

@@ -4,7 +4,7 @@ import pickle
 df=pd.read_csv("processed_ballbyball.csv")
 
 
-class Batsman():
+class Batsmant():
 
     def __init__(self,deliveries_df):
 
@@ -84,7 +84,7 @@ class Batsman():
     def combined(self):
         return self.comb_df    
 
-bat=Batsman(df)
+bat=Batsmant(df)
 #result=bat.calculate('H Klaasen',[1,2,3],["Spin"],[2023]) 
 result=bat.calculate('Sunrisers Hyderabad',[1],["Pace","Spin"],[2023]) 
 #result1=bat.overall()
