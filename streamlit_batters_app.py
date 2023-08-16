@@ -22,6 +22,14 @@ def main():
     phases = st.multiselect("Select Phases ", ["Powerplay", "Middle1","Middle2","Slog"])
     # Input for Bowling type (dropdown)
     bowling_type = st.multiselect("Select Bowling Type(s)", ["Pace", "Spin"])
+    start_year = 2016
+    end_year = 2023
+    selected_years = st.slider("Select Seasons", start_year, end_year, (start_year, end_year))
+    ph1={'Powerplay':1,'Middle1':2,'Middle2':3,'Slog':4}
+
+    overs=[ph1[phases[i]] for i in range(len(phases))]
+    bowling_type=[bowling_type[i] for i in range(len(bowling_type))]
+    Season=[i for i in range(selected_years[0],selected_years[1]+1)]
     if st.button('Submit'):
 
 
@@ -30,14 +38,7 @@ def main():
         #st.write("Selected Bowling Type:", type(bowling_type[0]))  # Corrected indentation
         #st.write("Selected Phases:", len(phases))          
         #st.write("Selected Seasons:", selected_years[0], "to", selected_years[1])
-        start_year = 2016
-        end_year = 2023
-        selected_years = st.slider("Select Seasons", start_year, end_year, (start_year, end_year))
-        ph1={'Powerplay':1,'Middle1':2,'Middle2':3,'Slog':4}
-    
-        overs=[ph1[phases[i]] for i in range(len(phases))]
-        bowling_type=[bowling_type[i] for i in range(len(bowling_type))]
-        Season=[i for i in range(selected_years[0],selected_years[1]+1)]
+        
         result1=bat.calculate(team_name,overs,bowling_type,Season)
         result2=bat.overall()
         
